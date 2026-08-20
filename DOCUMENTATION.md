@@ -66,4 +66,4 @@ Hvis YouTube ændrer markup:
 - Live YouTube-negativtest: fire ekstra feed-sektioner blev indlæst uden medlemskort, og ingen almindelige videokort matchede.
 - En positiv live-test med den installerede udvidelse afventer et faktisk `Members only`-kort i feedet.
 - Browserinstallation: brugerens skærmbillede bekræfter, at version `0.1.0` er installeret og aktiv i Chrome.
-- Git: den validerede initialversion publiceres på `main` i det private repo `Kajsing/members-begone`.
+- Git: den validerede version publiceres på `main` i det offentlige repo `Kajsing/members-begone`.

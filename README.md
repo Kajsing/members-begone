@@ -1,44 +1,44 @@
 # Members Begone
 
-En lille, privatlivsvenlig Chrome-udvidelse, der fjerner YouTubes `Members only`-videoer fra forsiden, søgeresultater, anbefalinger og sidekolonner.
+A small, privacy-friendly Chrome extension that removes YouTube's `Members only` videos from the home feed, search results, recommendations, and sidebars.
 
-Udvidelsen låser ikke medlemsindhold op og omgår ikke betaling. Den fjerner kun de videokort, som YouTube viser som reklame/lokkemad i dit feed.
+The extension does not unlock members-only content or bypass payment. It only removes the video cards YouTube displays as promotions in your feed.
 
-## Funktioner
+## Features
 
-- Fjerner medlemskort helt som standard, så feedet lukker hullet.
-- Kan i stedet vise en neutral pladsholder.
-- Reagerer på YouTubes SPA-navigation og dynamisk indlæste kort.
-- Bruger YouTubes strukturelle medlemsmarkør først og lokaliseret badge-tekst som fallback.
-- Har ingen tracking, netværkskald eller tredjepartsafhængigheder.
-- Beder kun om adgang til YouTube, synkroniserede indstillinger og den aktive fane, når popup’en åbnes.
+- Removes members-only cards completely by default, allowing the feed to close the gap.
+- Can display a neutral placeholder instead.
+- Responds to YouTube's SPA navigation and dynamically loaded cards.
+- Prefers YouTube's structural members-only marker and uses localized badge text as a fallback.
+- Includes no tracking, network requests, or third-party runtime dependencies.
+- Requests access only to YouTube, synchronized settings, and the active tab while the popup is open.
 
-## Installer lokalt
+## Install locally
 
-1. Åbn `chrome://extensions` i Chrome.
-2. Slå **Udviklertilstand** til.
-3. Vælg **Indlæs upakket**.
-4. Vælg denne projektmappe.
-5. Genindlæs en åben YouTube-fane én gang.
+1. Open `chrome://extensions` in Chrome.
+2. Enable **Developer mode**.
+3. Select **Load unpacked**.
+4. Choose this project directory.
+5. Reload any YouTube tabs that were already open.
 
-Klik på udvidelsens ikon for at slå filtreringen til/fra eller vælge mellem fuld fjernelse og pladsholdere.
+Click the extension icon to pause or resume filtering, or to switch between fully removing cards and displaying placeholders.
 
-## Udvikling
+## Development
 
-Projektet kræver ingen installation af npm-pakker. Node.js 20 eller nyere bruges kun til kontroller og tests.
+The project has no npm packages to install. Node.js 20 or newer is used only for validation and tests.
 
 ```powershell
 npm run verify
 ```
 
-Efter ændringer åbnes `chrome://extensions`, og der klikkes på genindlæsningsknappen på udvidelsens kort.
+After making changes, open `chrome://extensions` and click the reload button on the extension card.
 
-## Sådan virker det
+## How it works
 
-`src/detector.js` genkender medlemsbadges og finder det mindste sikre YouTube-renderer-kort. `src/content.js` observerer dynamiske DOM-ændringer og markerer kortene. `src/content.css` skjuler dem eller tegner pladsholderen. Popup’en gemmer kun `enabled` og `mode` i `chrome.storage.sync`.
+`src/detector.js` recognizes members-only badges and locates the smallest safe YouTube renderer card. `src/content.js` observes dynamic DOM changes and marks matching cards. `src/content.css` hides them or renders a placeholder. The popup stores only `enabled` and `mode` in `chrome.storage.sync`.
 
-Se [DOCUMENTATION.md](DOCUMENTATION.md) for arkitektur, vedligeholdelse og kendte begrænsninger.
+See [DOCUMENTATION.md](DOCUMENTATION.md) for architecture, maintenance guidance, and known limitations.
 
-## Privatliv
+## Privacy
 
-Se [PRIVACY.md](PRIVACY.md). Kort fortalt forlader ingen browserdata maskinen via denne udvidelse.
+See [PRIVACY.md](PRIVACY.md). In short, this extension does not transmit browser data off the device.
