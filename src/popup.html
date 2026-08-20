@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Members Begone</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="panel">
+      <header class="hero">
+        <span class="hero__mark" aria-hidden="true">×</span>
+        <div>
+          <h1>Members Begone</h1>
+          <p>Ro i dit YouTube-feed.</p>
+        </div>
+      </header>
+
+      <label class="switch-row" for="enabled">
+        <span>
+          <strong>Fjern medlemsvideoer</strong>
+          <small>Virker automatisk på YouTube</small>
+        </span>
+        <span class="switch">
+          <input id="enabled" type="checkbox">
+          <span class="switch__track" aria-hidden="true"></span>
+        </span>
+      </label>
+
+      <fieldset id="mode-fieldset">
+        <legend>Når en medlemsvideo findes</legend>
+        <label class="choice">
+          <input type="radio" name="mode" value="hide">
+          <span>
+            <strong>Fjern helt</strong>
+            <small>Lukker hullet i feedet</small>
+          </span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="mode" value="placeholder">
+          <span>
+            <strong>Vis pladsholder</strong>
+            <small>Bevarer kortets plads</small>
+          </span>
+        </label>
+      </fieldset>
+
+      <div class="status" role="status" aria-live="polite">
+        <span class="status__dot" aria-hidden="true"></span>
+        <span id="status-text">Kontrollerer siden…</span>
+      </div>
+
+      <button id="rescan" type="button">Scan siden igen</button>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

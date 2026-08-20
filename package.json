@@ -1,0 +1,14 @@
+{
+  "name": "members-begone",
+  "version": "0.1.0",
+  "private": true,
+  "description": "En lille Chrome-udvidelse, der fjerner Members only-kort fra YouTube.",
+  "scripts": {
+    "check": "node scripts/validate-manifest.mjs",
+    "test": "node --test tests/*.test.js",
+    "verify": "npm run check && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

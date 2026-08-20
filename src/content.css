@@ -1,0 +1,46 @@
+html[data-members-begone-mode="hide"] :where(.members-begone-card) {
+  display: none !important;
+}
+
+html[data-members-begone-mode="placeholder"] :where(.members-begone-card) {
+  align-items: center !important;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(43, 166, 64, 0.16), transparent 42%),
+    #171717 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 14px !important;
+  box-sizing: border-box !important;
+  color: #f1f1f1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  min-height: 190px !important;
+  overflow: hidden !important;
+  padding: 28px 20px !important;
+  text-align: center !important;
+}
+
+html[data-members-begone-mode="placeholder"] :where(.members-begone-card) > * {
+  display: none !important;
+}
+
+html[data-members-begone-mode="placeholder"] :where(.members-begone-card)::before {
+  background: rgba(43, 166, 64, 0.16);
+  border: 1px solid rgba(71, 214, 96, 0.35);
+  border-radius: 999px;
+  color: #72e786;
+  content: "Members Begone";
+  display: block;
+  font: 700 12px/1.2 Roboto, Arial, sans-serif;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+  padding: 7px 11px;
+  text-transform: uppercase;
+}
+
+html[data-members-begone-mode="placeholder"] :where(.members-begone-card)::after {
+  color: #b8b8b8;
+  content: "Medlemsvideo fjernet";
+  display: block;
+  font: 500 14px/1.35 Roboto, Arial, sans-serif;
+}
