@@ -18,7 +18,7 @@ Der bruges ingen service worker. YouTube-content scriptet kan selv håndtere hel
 
 Detektoren prioriterer markører som `BADGE_STYLE_TYPE_MEMBERS_ONLY` og klasser, der indeholder `members-only`. Det er den mest robuste og sproguafhængige vej.
 
-Som fallback genkendes den eksakte badge-tekst på en lille liste over YouTube-badgecontainere. Matchene er forankret til hele teksten, så en normal videotitel som “My members only Q&A is public now” ikke bliver skjult.
+Som fallback genkendes den eksakte badge-tekst på en lille liste over YouTube-badgecontainere, herunder både den ældre `yt-badge-shape` og den aktuelle `badge-shape` markup. Matchene er forankret til hele teksten, så en normal videotitel som “My members only Q&A is public now” ikke bliver skjult.
 
 Når et badge findes, vælges `ytd-rich-item-renderer` før et indre lockup-element. Det er vigtigt, fordi det er rich-item-wrapperen, som ejer YouTubes grid-slot; skjules kun barnet, står der et tomt hul.
 

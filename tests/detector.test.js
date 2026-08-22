@@ -112,6 +112,17 @@ test("finder et tekstbaseret badge i et videokort", () => {
   assert.equal(Detector.cardHasMembersOnlySignal(card), true);
 });
 
+test("genkender YouTubes aktuelle badge-shape markup", () => {
+  const richItem = new FakeElement("ytd-rich-item-renderer");
+  const lockup = richItem.append(new FakeElement("yt-lockup-view-model"));
+  const viewModel = lockup.append(new FakeElement("yt-badge-view-model"));
+  const badge = viewModel.append(new FakeElement("badge-shape", { text: "Members only" }));
+
+  assert.deepEqual(Detector.findMembersOnlySignals(richItem), [badge]);
+  assert.equal(Detector.findCard(badge), richItem);
+  assert.equal(Detector.cardHasMembersOnlySignal(richItem), true);
+});
+
 test("bruger YouTubes strukturelle badge-marker uafhængigt af sprog", () => {
   const badge = new FakeElement("span", {
     text: "Membresía",

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Genkender YouTubes aktuelle `<badge-shape>`-markup for Members only-kort.
+
 ## 0.1.0 - 2026-08-20
 
 - Første Manifest V3-version.

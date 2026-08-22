@@ -38,6 +38,7 @@
   const BADGE_CONTAINER_SELECTOR = [
     "ytd-badge-supported-renderer",
     "yt-badge-shape",
+    "badge-shape",
     ".badge-shape-wiz__text",
     "[badge-style-type]"
   ].join(", ");
