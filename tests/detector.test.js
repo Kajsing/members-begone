@@ -91,6 +91,7 @@ test("normaliserer usynlige tegn og mellemrum", () => {
 
 test("genkender engelske og danske medlemsbadges", () => {
   assert.equal(Detector.matchesMembersOnlyText("Members only"), true);
+  assert.equal(Detector.matchesMembersOnlyText("Members first"), true);
   assert.equal(Detector.matchesMembersOnlyText("Kun for medlemmer"), true);
   assert.equal(Detector.matchesMembersOnlyText("KUN MEDLEMMER"), true);
 });
@@ -99,6 +100,7 @@ test("genkender lokaliserede badges uden at ramme almindelige titler", () => {
   assert.equal(Detector.matchesMembersOnlyText("Nur für Mitglieder"), true);
   assert.equal(Detector.matchesMembersOnlyText("メンバー限定"), true);
   assert.equal(Detector.matchesMembersOnlyText("My members only Q&A is public now"), false);
+  assert.equal(Detector.matchesMembersOnlyText("Our members first preview is now public"), false);
   assert.equal(Detector.matchesMembersOnlyText("Membership benefits"), false);
 });
 
@@ -117,6 +119,17 @@ test("genkender YouTubes aktuelle badge-shape markup", () => {
   const lockup = richItem.append(new FakeElement("yt-lockup-view-model"));
   const viewModel = lockup.append(new FakeElement("yt-badge-view-model"));
   const badge = viewModel.append(new FakeElement("badge-shape", { text: "Members only" }));
+
+  assert.deepEqual(Detector.findMembersOnlySignals(richItem), [badge]);
+  assert.equal(Detector.findCard(badge), richItem);
+  assert.equal(Detector.cardHasMembersOnlySignal(richItem), true);
+});
+
+test("genkender Members first som et medlemskort", () => {
+  const richItem = new FakeElement("ytd-rich-item-renderer");
+  const lockup = richItem.append(new FakeElement("yt-lockup-view-model"));
+  const viewModel = lockup.append(new FakeElement("yt-badge-view-model"));
+  const badge = viewModel.append(new FakeElement("badge-shape", { text: "Members first" }));
 
   assert.deepEqual(Detector.findMembersOnlySignals(richItem), [badge]);
   assert.equal(Detector.findCard(badge), richItem);

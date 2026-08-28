@@ -1,6 +1,6 @@
 {
   "name": "members-begone",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "En lille Chrome-udvidelse, der fjerner Members only-kort fra YouTube.",
   "scripts": {

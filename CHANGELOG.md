@@ -1,8 +1,9 @@
 # Changelog
 
-## Unreleased
+## 0.1.1 - 2026-08-28
 
 - Genkender YouTubes aktuelle `<badge-shape>`-markup for Members only-kort.
+- Fjerner også early-access-kort mærket “Members first”.
 
 ## 0.1.0 - 2026-08-20
 

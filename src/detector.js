@@ -11,6 +11,7 @@
 
   const MEMBER_LABEL_PATTERNS = [
     /^members?\s+only$/iu,
+    /^members?\s+first$/iu,
     /^kun\s+(?:for\s+)?medlemmer$/iu,
     /^bare\s+for\s+medlemmer$/iu,
     /^(?:endast|bara)\s+för\s+medlemmar$/iu,

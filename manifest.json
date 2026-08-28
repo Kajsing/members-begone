@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Members Begone",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fjerner Members only-videoer og medlemslokkemad fra YouTube-feedet.",
   "minimum_chrome_version": "102",
   "permissions": [
